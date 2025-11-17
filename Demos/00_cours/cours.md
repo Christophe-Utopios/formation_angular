@@ -52,3 +52,18 @@ On peut ensuite créer des liens vers ces routes avec des balises <a>, et l'attr
 ```angular2html
 <a routerLink="/">Home</a>
 ```
+
+## Les pipes 
+
+Les pipes sont des fonctions qui prennent une valeur en entrée, et ressort la valeur transformée
+Il y a des pipes pour le textes `uppercase, lowercase, titlecase`
+Il y a des pipes de type number
+    - Le nombre minimum de chiffres avant la virgule
+    - Le nombre minimum de chiffres après la virgule
+    - Le nombre maximum de chiffres après la virgule
+
+On peut créer un pipe personnalisé avec la commande :
+
+```bash
+ng g pipe nompipe
+```
