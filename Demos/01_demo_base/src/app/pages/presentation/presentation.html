@@ -1,0 +1,25 @@
+<h1>Présentation</h1>
+
+<section>
+    <h2>Interpolation</h2>
+
+    <p>Nom : {{ name }}</p>
+    <p>1 + 1 = {{ 1 + 1 }}</p>
+    <p>NOM : {{ name.toUpperCase() }}</p>
+</section>
+
+<section>
+    <h2>Data binding / attribute binding</h2>
+
+    <p>
+        <img [src]="m2i" [alt]="description" />
+    </p>
+
+    <p [style]="myStyle">Mon paragraphe</p>
+
+    <p [class]="isLogged ? maClassA : maClassB">J'ai une classe dynamique</p>
+
+    <button (click)="toggleLogged()">
+        {{ isLogged ? "Déconnexion" : "Connexion" }}
+    </button>
+</section>
