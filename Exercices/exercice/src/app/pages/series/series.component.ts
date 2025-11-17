@@ -12,4 +12,10 @@ export class SeriesComponent {
   removeSerie(index: number) {
     this.series.splice(index, 1);
   }
+
+  // Partie 2
+  order: 'asc' | 'desc' = 'asc';
+  setOrder(order: 'asc' | 'desc') {
+    this.order = order;
+  }
 }
