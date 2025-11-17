@@ -1,0 +1,12 @@
+<div>
+    <h1>Counter</h1>
+    <p [class]="color" >{{counter}}</p>
+    <div>
+        <button (click)="decrement()" 
+        class="bg-red-500 text-white px-4 py-2 hover:bg-red-700"
+        >
+            -
+        </button>
+        <button (click)="increment()" >+</button>
+    </div>
+</div>
