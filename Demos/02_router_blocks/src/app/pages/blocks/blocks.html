@@ -1,0 +1,34 @@
+<h1>Les blocks</h1>
+
+<section>
+    <h2>Les blocks conditionnels</h2>
+
+    @if (!isLogged) {
+        <div>
+            <h3>Vous n'êtes pas connecté</h3>
+            <div>
+                <button (click)="toggleLogged()">Se connecter</button>
+            </div>
+        </div>
+    } @else {
+        <div>
+            <h3>Bienvenue !</h3>
+            <div>
+                <button (click)="toggleLogged()">Se deconnecter</button>
+            </div>
+        </div>
+    }
+</section>
+
+<section>
+    <ul>
+        @for (fruit of fruits; track fruit; let i = $index) {
+            <li>
+                L'index : {{i}} fruit : {{fruit}}
+                C'est le premier élément de la liste ? {{ $first }}
+                C'est le dernier élément de la liste ? {{ $last }}
+                il y a {{ $count }} items dans le tableau
+            </li>
+        }
+    </ul>
+</section>
