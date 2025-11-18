@@ -1,0 +1,26 @@
+<div class="container mx-auto p-6">
+  <h1 class="text-4xl font-bold text-slate-800 mb-8 text-center">Librairie</h1>
+
+  <!-- Liste des livres -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (book of books; track book.id) {
+    <div
+      class="bg-slate-100 rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+    >
+      <!-- Titre du livre -->
+      <h2 class="text-2xl font-semibold text-slate-800 mb-3">
+        {{ book.title }} <span class="text-lg">{{ book.isRead | emoji }}</span>
+      </h2>
+      <!-- Auteur -->
+      <p class="text-slate-600 mb-4">Auteur: {{ book.author }}</p>
+      <!-- Bouton pour marquer comme lu/pas lu -->
+      <button
+        (click)="toggleIsRead(book)"
+        class="bg-slate-600 hover:bg-slate-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"
+      >
+        {{ book.isRead ? 'Marquer comme pas lu' : 'Marquer comme lu' }}
+      </button>
+    </div>
+    }
+  </section>
+</div>
