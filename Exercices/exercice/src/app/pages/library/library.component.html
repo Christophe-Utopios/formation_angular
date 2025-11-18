@@ -23,4 +23,53 @@
     </div>
     }
   </section>
+
+  <!-- Formulaire pour ajouter un livre -->
+  <section class="bg-slate-50 p-8 mt-12 rounded-lg shadow-md max-w-lg mx-auto">
+    <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Ajouter un livre</h2>
+
+    <form (ngSubmit)="submitNewBook()" class="space-y-6">
+      <!-- Titre -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-slate-700"> Titre </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          [(ngModel)]="newBook.title"
+          class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          placeholder="Entrez le titre du livre"
+        />
+        @if(titleHasError) {
+        <small class="text-red-600 text-sm">Veuillez entrer un titre</small>
+        }
+      </div>
+
+      <!-- Auteur -->
+      <div>
+        <label for="author" class="block text-sm font-medium text-slate-700"> Auteur </label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          [(ngModel)]="newBook.author"
+          class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          placeholder="Entrez l'auteur du livre"
+        />
+        @if(authorHasError) {
+        <small class="text-red-600 text-sm">Veuillez entrer un auteur</small>
+        }
+      </div>
+
+      <!-- Bouton Enregistrer -->
+      <div>
+        <button
+          type="submit"
+          class="w-full py-3 px-6 bg-slate-700 text-white rounded-lg font-semibold hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 transition-all duration-300"
+        >
+          Enregistrer
+        </button>
+      </div>
+    </form>
+  </section>
 </div>

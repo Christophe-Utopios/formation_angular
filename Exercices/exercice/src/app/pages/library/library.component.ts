@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { EmojiPipe } from '../../utils/pipes/emoji.pipe';
 import { Book } from '../../utils/types/book.type';
-
 
 @Component({
   selector: 'app-library',
@@ -21,5 +19,38 @@ export class LibraryComponent {
 
   toggleIsRead(book: Book) {
     book.isRead = !book.isRead;
+  }
+
+  // PARTIE 2
+  newBook: Pick<Book, 'title' | 'author'> = {
+    title: '',
+    author: '',
+  };
+
+  isSubmitted = false;
+
+  get titleHasError() {
+    return this.isSubmitted && !this.newBook.title;
+  }
+
+  get authorHasError() {
+    return this.isSubmitted && !this.newBook.author;
+  }
+
+  submitNewBook() {
+    this.isSubmitted = true;
+    if (!this.titleHasError && !this.authorHasError) {
+      const book: Book = {
+        id: this.books.length,
+        isRead: false,
+        ...this.newBook,
+      };
+      this.books.push(book);
+      this.newBook = {
+        title: '',
+        author: '',
+      };
+      this.isSubmitted = false;
+    }
   }
 }
