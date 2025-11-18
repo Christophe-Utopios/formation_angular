@@ -40,3 +40,18 @@
 - Le titre et l'auteur sont obligatoire
 - Par défaut, la valeur de isRead est false
 - Ajouter le nouveau livre à la liste précédente.
+
+# Exercice 06:
+
+- Créer un nouveau composant et sa route
+- Dans ce composant, créer un formulaire réactif pour créer un pokemon:
+    -  nom
+    - description
+    - liste de types
+    - liste d'attaques
+        - nom
+        - description
+        - dégats
+    - zone
+        - nom
+        - region

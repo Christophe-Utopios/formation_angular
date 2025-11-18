@@ -8,7 +8,7 @@ import {
 import { Pokemon } from '../../utils/types/pokemon.type';
 
 @Component({
-  selector: 'app-pokemon'
+  selector: 'app-pokemon',
   imports: [ReactiveFormsModule],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css',
