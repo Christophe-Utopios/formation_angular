@@ -74,3 +74,9 @@ ng g pipe nompipe
 
 - Template Driven Form
 - Reactive forms
+
+Dans le formulaire réactives, on peut retrouver 3 classes principales pour représenter les données :
+
+- FormControl pour les données simple (boolean, string, number)
+- FormGroup pour les objets
+- FormArray pour les tableaux

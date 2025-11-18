@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './formulaire.html',
   styleUrl: './formulaire.css',
 })
@@ -34,4 +34,20 @@ export class Formulaire {
       console.log(this.user)
     }
   }
+
+  // Reactive forms :
+
+  book_control = new FormControl("", [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.pattern(/^[A-Za-z]*/)
+  ])
+
+  saveBook() {
+    if (this.book_control.valid){
+      console.log(this.book_control.value)
+      this.book_control.reset()
+    }
+  }
+
 }

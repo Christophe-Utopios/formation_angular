@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { EmojiPipe } from '../../utils/pipes/emoji.pipe';
 import { Book } from '../../utils/types/book.type';
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-library',
-  imports: [EmojiPipe],
+  imports: [EmojiPipe, FormsModule],
   templateUrl: './library.component.html',
   styleUrl: './library.component.css',
 })
@@ -30,11 +31,11 @@ export class LibraryComponent {
   isSubmitted = false;
 
   get titleHasError() {
-    return this.isSubmitted && !this.newBook.title;
+    return this.isSubmitted && !this.newBook.title.trim();
   }
 
   get authorHasError() {
-    return this.isSubmitted && !this.newBook.author;
+    return this.isSubmitted && !this.newBook.author.trim();
   }
 
   submitNewBook() {
@@ -43,7 +44,7 @@ export class LibraryComponent {
       const book: Book = {
         id: this.books.length,
         isRead: false,
-        ...this.newBook,
+        ...this.newBook
       };
       this.books.push(book);
       this.newBook = {

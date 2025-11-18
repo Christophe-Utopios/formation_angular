@@ -46,3 +46,25 @@
         <button>Valider</button>
     </form>
 </section>
+
+
+<section>
+    <h2>Reactive Forms</h2>
+
+    <form (ngSubmit)="saveBook()">
+        <div>
+            <label for="book">Titre du livre</label>
+            <input type="text" id="book" [formControl]="book_control">
+            @if(book_control.invalid && !book_control.untouched){
+                @if(book_control.hasError('required')){
+                    <span>Champs Obligatoire</span>
+                } @else if (book_control.hasError('minlength')){
+                    <span>Trop court</span>
+                } @else {
+                    <span>Format invalide</span>
+                }
+            }
+        </div>
+        <button>Save</button>
+    </form>
+</section>

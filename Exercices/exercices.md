@@ -33,3 +33,10 @@
     - isRead
 - Quand les livres sont lus, on affiche un emoji à côté du titre ou une phrase
 - Ajouter un bouton pour marquer un livre comme lu / pas lu
+
+# Exercice 05:
+
+- Dans le composant librairie, créer un formulaire pour créer un livre.
+- Le titre et l'auteur sont obligatoire
+- Par défaut, la valeur de isRead est false
+- Ajouter le nouveau livre à la liste précédente.
