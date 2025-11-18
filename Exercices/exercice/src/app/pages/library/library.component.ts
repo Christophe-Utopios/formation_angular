@@ -3,10 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { EmojiPipe } from '../../utils/pipes/emoji.pipe';
 import { Book } from '../../utils/types/book.type';
 
+
 @Component({
   selector: 'app-library',
-  standalone: true,
-  imports: [EmojiPipe, FormsModule],
+  imports: [EmojiPipe],
   templateUrl: './library.component.html',
   styleUrl: './library.component.css',
 })

@@ -23,7 +23,7 @@ On lance le serveur avec la commande `npm start` ou `ng serve`
 ## Créer un nouveau composant
 
 ```bash
-ng g c dossier/nom-composant
+ng g c dossier/nom-composant --skip-tests
 ```
 
 ## L'interpolation
@@ -67,3 +67,10 @@ On peut créer un pipe personnalisé avec la commande :
 ```bash
 ng g pipe nompipe
 ```
+
+## Les formulaire
+
+2 types en Angular :
+
+- Template Driven Form
+- Reactive forms

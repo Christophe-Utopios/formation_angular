@@ -1,0 +1,18 @@
+<h1>Les formulaire</h1>
+
+<section>
+    <h2>Template driven forms</h2>
+
+    <h3>Sans two way binding</h3>
+
+    <div>
+        <label for="msg">Message</label>
+        <input 
+            type="text"
+            id="msg"
+            [value]="message"
+            (input)="updateMessage($event)"
+        >
+    </div>
+    <p>Message = {{message}}</p>
+</section>

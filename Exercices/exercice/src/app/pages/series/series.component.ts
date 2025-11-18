@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { SortPipe } from '../../utils/pipes/sort.pipe';
 
 @Component({
   selector: 'app-series',
-  imports: [],
+  imports: [SortPipe],
   templateUrl: './series.component.html',
   styleUrl: './series.component.css',
 })
@@ -15,6 +16,7 @@ export class SeriesComponent {
 
   // Partie 2
   order: 'asc' | 'desc' = 'asc';
+
   setOrder(order: 'asc' | 'desc') {
     this.order = order;
   }
