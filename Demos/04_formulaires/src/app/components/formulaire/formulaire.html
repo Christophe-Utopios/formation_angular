@@ -67,4 +67,41 @@
         </div>
         <button>Save</button>
     </form>
+
+    <h1>Formation</h1>
+
+    <form [formGroup]="formation_form" (ngSubmit)="saveFormation()">
+        <div>
+            <label for="title">Titre</label>
+            <input type="text" id="title" formControlName="title">
+        </div>
+
+        <div>
+            <label for="duree">Durée</label>
+            <input type="number" id="duree" formControlName="duration">
+        </div>
+
+        <fieldset formGroupName="trainer">
+            <div>
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" formControlName="firstname">
+            </div>
+            <div>
+                <label for="lastname">Nom</label>
+                <input type="text" id="lastname" formControlName="lastname">
+            </div>
+        </fieldset>
+
+        <fieldset formArrayName="modules">
+            @for (control of modules.controls; track control) {
+                <div>
+                    <label [for]="'module' + $index">Module  {{$index + 1}}</label>
+                    <input type="text" [id]="'module' + $index" [formControlName]="$index">
+                </div>
+            }
+            <button (click)="addModule()">Ajouter un module</button>
+        </fieldset>
+        <button>Sauvegarder</button>
+
+    </form>
 </section>

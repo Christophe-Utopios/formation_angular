@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire',
@@ -47,6 +47,37 @@ export class Formulaire {
     if (this.book_control.valid){
       console.log(this.book_control.value)
       this.book_control.reset()
+    }
+  }
+
+  // FormGroup
+
+  formation_form = new FormGroup(
+    {
+      title : new FormControl("", [Validators.required]),
+      duration: new FormControl(1, [Validators.min(1), Validators.max(10)]),
+      trainer : new FormGroup(
+        {
+          firstname : new FormControl(''),
+          lastname: new FormControl('')
+        }
+      ),
+      modules: new FormArray([new FormControl(""), new FormControl("")])
+    }
+  )
+
+  get modules() {
+    return this.formation_form.controls.modules
+  }
+
+  addModule(){
+    this.modules.push(new FormControl(''))
+  }
+
+  saveFormation() {
+    if (this.formation_form.valid) {
+      console.log(this.formation_form.value)
+      this.formation_form.reset()
     }
   }
 
