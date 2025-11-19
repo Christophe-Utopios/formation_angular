@@ -76,5 +76,5 @@ Créer un pokedexService
 - Contient un tableau de pokemons
 - Deux méthodes pour ajouter et supprimer du tableau
 
-- Dans pokemonCard Ajouter un bouton pour ajouter au podedex
+- Dans pokemonCard Ajouter un bouton pour ajouter au pokedex
 - Dans un composant Pokedex afficher la liste des pokemons

@@ -7,8 +7,6 @@ import { Pokemon } from '../types/pokemon.type';
 export class PokemonService {
   private pokemons: Pokemon[] = [];
 
-  constructor() {}
-
   addPokemon(pokemon: Pokemon): void {
     this.pokemons.push(pokemon);
   }

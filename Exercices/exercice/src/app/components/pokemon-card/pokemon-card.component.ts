@@ -12,9 +12,6 @@ type PokemonType = 'poison' | 'feu' | 'psy' | 'eau' | 'sol' | 'vol' | 'fée' | '
 })
 export class PokemonCardComponent {
   @Input() pokemon: any; // Assuming 'pokemon' is passed as an input
-<<<<<<< HEAD
-  @Output() delete = new EventEmitter<void>()
-=======
   @Output() delete = new EventEmitter<void>();
 
   constructor(private pokemonService: PokemonService) {}
@@ -22,7 +19,6 @@ export class PokemonCardComponent {
   addToPokedex(): void {
     this.pokemonService.addPokemon(this.pokemon);
   }
->>>>>>> a7487abf58a32d376486a12b1c09f2f8e4cdfc22
 
   // Function to return a class based on the type
   getTypeColor(type: string): string {
