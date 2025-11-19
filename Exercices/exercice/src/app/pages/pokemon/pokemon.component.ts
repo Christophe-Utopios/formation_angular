@@ -66,6 +66,10 @@ export class PokemonComponent {
   }
 
   deletePokemon(index: number) {
+<<<<<<< HEAD
     this.pokemons.splice(index, 1)
+=======
+    this.pokemons.splice(index, 1);
+>>>>>>> a7487abf58a32d376486a12b1c09f2f8e4cdfc22
   }
 }

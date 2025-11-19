@@ -4,9 +4,9 @@
 - Créer un composant "counter"
 - Intégrer le composant dans app
 - Le composant counter doit afficher un compteur
-    - qui commence à 0
-    - qui est rouge si impair, et vert si pair
-    - qui s'incrémente ou se décrémente grâce à 2 boutons
+  - qui commence à 0
+  - qui est rouge si impair, et vert si pair
+  - qui s'incrémente ou se décrémente grâce à 2 boutons
 
 # Exercice 02:
 
@@ -28,9 +28,9 @@
 
 - Créer un composant librairie, et sa route
 - Dans ce composant, afficher une liste de livres
-    - title
-    - author
-    - isRead
+  - title
+  - author
+  - isRead
 - Quand les livres sont lus, on affiche un emoji à côté du titre ou une phrase
 - Ajouter un bouton pour marquer un livre comme lu / pas lu
 
@@ -45,16 +45,16 @@
 
 - Créer un nouveau composant et sa route
 - Dans ce composant, créer un formulaire réactif pour créer un pokemon:
-    -  nom
+  - nom
+  - description
+  - liste de types
+  - liste d'attaques
+    - nom
     - description
-    - liste de types
-    - liste d'attaques
-        - nom
-        - description
-        - dégats
-    - zone
-        - nom
-        - region
+    - dégats
+  - zone
+    - nom
+    - region
 
 # Exercice 7
 
