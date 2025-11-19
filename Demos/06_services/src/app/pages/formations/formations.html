@@ -1,0 +1,12 @@
+<h1>Formation</h1>
+
+<app-lifecycle [data]="'ma valeur 1'" />
+<app-lifecycle [data]="'ma valeur 2'" />
+
+<section>
+    @for (form of formations; track form) {
+        <div>
+            <h1>{{form}}</h1>
+        </div>
+    }
+</section>
