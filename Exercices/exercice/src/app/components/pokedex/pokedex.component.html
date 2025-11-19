@@ -1,0 +1,41 @@
+<div class="container mx-auto p-6">
+  <h2 class="text-3xl font-bold text-center mb-6">Mon Pokedex</h2>
+
+  <div *ngIf="pokemons.length === 0" class="text-center text-gray-500">
+    <p>Aucun Pokémon dans le Pokedex pour le moment.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let pokemon of pokemons" class="bg-white shadow-lg rounded-lg p-4 border border-gray-300">
+      <h3 class="text-xl font-bold text-center mb-2">{{ pokemon.name }}</h3>
+      <p class="text-gray-700 mb-2">{{ pokemon.description }}</p>
+
+      <div class="mb-2">
+        <span class="font-semibold">Types : </span>
+        <span *ngFor="let type of pokemon.types; let last = last">
+          {{ type }}<span *ngIf="!last">, </span>
+        </span>
+      </div>
+
+      <div class="mb-2">
+        <span class="font-semibold">Zone : </span>{{ pokemon.zone.name }}
+      </div>
+
+      <div class="mb-2">
+        <span class="font-semibold">Attaques : </span>
+        <ul class="list-disc ml-6">
+          <li *ngFor="let attack of pokemon.attacks">
+            {{ attack.name }} ({{ attack.power }})
+          </li>
+        </ul>
+      </div>
+
+      <button
+        (click)="removePokemon(pokemon)"
+        class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"
+      >
+        Retirer du Pokedex
+      </button>
+    </div>
+  </div>
+</div>

@@ -129,7 +129,7 @@
   <h2>Mes pokemons</h2>
   <div>
     @for (poke of pokemons; track poke; let i = $index) {
-    <app-pokemon-card [pokemon]="poke" />
+    <app-pokemon-card [pokemon]="poke" (delete)="deletePokemon(i)" />
     } @empty {
     <p>la liste est vide</p>
     }

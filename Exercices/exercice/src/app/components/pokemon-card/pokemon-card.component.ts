@@ -1,17 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Pokemon } from '../../utils/types/pokemon.type';
+import { PokemonService } from '../../utils/services/pokemon.service';
 
-type PokemonType =
-  | 'poison'
-  | 'feu'
-  | 'psy'
-  | 'eau'
-  | 'sol'
-  | 'vol'
-  | 'fée'
-  | 'dragon'
-  | 'roche';
+type PokemonType = 'poison' | 'feu' | 'psy' | 'eau' | 'sol' | 'vol' | 'fée' | 'dragon' | 'roche';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -21,6 +12,13 @@ type PokemonType =
 })
 export class PokemonCardComponent {
   @Input() pokemon: any; // Assuming 'pokemon' is passed as an input
+  @Output() delete = new EventEmitter<void>();
+
+  constructor(private pokemonService: PokemonService) {}
+
+  addToPokedex(): void {
+    this.pokemonService.addPokemon(this.pokemon);
+  }
 
   // Function to return a class based on the type
   getTypeColor(type: string): string {
