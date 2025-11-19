@@ -1,0 +1,9 @@
+<div>
+    <ul>
+        @for (object of objectList; track object) {
+            <li>{{object.name}}</li>
+        }
+    </ul>
+</div>
+
+<button (click)="addObject()">Ajouter objet</button>
