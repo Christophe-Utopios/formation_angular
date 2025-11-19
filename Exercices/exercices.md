@@ -78,3 +78,12 @@ Créer un pokedexService
 
 - Dans pokemonCard Ajouter un bouton pour ajouter au pokedex
 - Dans un composant Pokedex afficher la liste des pokemons
+
+## Exercice 10
+
+Créer un nouveau composant, ChuckNorris
+  - Utiliser l'api Chuck Norris dans un service pour afficher une fact en random
+
+- Le composant doit recevoir une string
+- Ajouter un bouton pour recharger la fact
+- https://api.chucknorris.io/
