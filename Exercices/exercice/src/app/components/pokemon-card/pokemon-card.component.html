@@ -1,0 +1,64 @@
+<article
+  class="bg-gray-300 shadow-lg rounded-lg p-6 max-w-sm border-4 border-gray-400"
+>
+  <!-- Fond dynamique en fonction du type principal -->
+  <div class="p-4 rounded-lg" [ngClass]="getTypeColor(pokemon.types[0])">
+    <!-- Nom du Pokémon -->
+    <h3 class="text-2xl font-bold text-center text-white">
+      {{ pokemon.name }}
+    </h3>
+
+    <!-- Description -->
+    <p class="text-center text-gray-100 mb-4">{{ pokemon.description }}</p>
+
+    <!-- Types du Pokémon -->
+    <h4 class="font-semibold text-white">Types :</h4>
+    <div class="types flex gap-2 mt-2 mb-4">
+      <span
+        class="rounded px-3 py-1 text-white font-semibold"
+        *ngFor="let type of pokemon.types"
+        [ngClass]="getTypeColor(type)"
+      >
+        {{ type }}
+      </span>
+    </div>
+
+    <!-- Zone du Pokémon -->
+    <h4 class="font-semibold text-white">Zone :</h4>
+    <p class="text-white">
+      <b>{{ pokemon.zone.name }} :</b> {{ pokemon.zone.description }}
+    </p>
+
+    <!-- Attaques -->
+    <h4 class="font-semibold text-white mt-4">Attaques :</h4>
+    <ul class="attacks list-disc ml-6 text-white">
+      <li *ngFor="let att of pokemon.attacks">
+        {{ att.name }} → <span class="font-semibold">{{ att.power }}</span>
+      </li>
+    </ul>
+
+    <!-- Boutons selon la vue -->
+    <div *ngIf="view === 'global'; else pokedexActions" class="mt-4">
+      <button
+        class="bg-green-500 text-white py-1 px-4 rounded"
+        (click)="addToPokedex()"
+      >
+        Ajouter au Pokédex
+      </button>
+      <button
+        class="bg-red-500 text-white py-1 px-4 rounded ml-2"
+        (click)="deletePokemon()"
+      >
+        Delete
+      </button>
+    </div>
+    <ng-template #pokedexActions>
+      <button
+        class="bg-yellow-500 text-white py-1 px-4 rounded mt-4"
+        (click)="deleteFromPokedex()"
+      >
+        Supprimer du Pokédex
+      </button>
+    </ng-template>
+  </div>
+</article>

@@ -124,3 +124,14 @@
     </button>
   </p>
 </form>
+
+<section>
+  <h2>Mes pokemons</h2>
+  <div>
+    @for (poke of pokemons; track poke; let i = $index) {
+    <app-pokemon-card [pokemon]="poke" />
+    } @empty {
+    <p>la liste est vide</p>
+    }
+  </div>
+</section>
