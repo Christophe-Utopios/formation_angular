@@ -36,29 +36,5 @@
         {{ att.name }} → <span class="font-semibold">{{ att.power }}</span>
       </li>
     </ul>
-
-    <!-- Boutons selon la vue -->
-    <div *ngIf="view === 'global'; else pokedexActions" class="mt-4">
-      <button
-        class="bg-green-500 text-white py-1 px-4 rounded"
-        (click)="addToPokedex()"
-      >
-        Ajouter au Pokédex
-      </button>
-      <button
-        class="bg-red-500 text-white py-1 px-4 rounded ml-2"
-        (click)="deletePokemon()"
-      >
-        Delete
-      </button>
-    </div>
-    <ng-template #pokedexActions>
-      <button
-        class="bg-yellow-500 text-white py-1 px-4 rounded mt-4"
-        (click)="deleteFromPokedex()"
-      >
-        Supprimer du Pokédex
-      </button>
-    </ng-template>
   </div>
 </article>

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PokedexService } from '../../utils/services/pokedex.service';
 import { Pokemon } from '../../utils/types/pokemon.type';
 
 type PokemonType =
@@ -16,7 +15,6 @@ type PokemonType =
 
 @Component({
   selector: 'app-pokemon-card',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css'],
@@ -40,17 +38,5 @@ export class PokemonCardComponent {
 
     // Utilisation d'une assertion de type pour éviter l'erreur
     return typeColors[type as PokemonType] || 'bg-gray-300'; // Default color if type not found
-  }
-  @Output() deleteEvent = new EventEmitter<Pokemon>();
-  @Input() view: 'global' | 'pokedex' = 'global';
-  constructor(private pokedexService: PokedexService) {}
-  deletePokemon() {
-    this.deleteEvent.emit(this.pokemon);
-  }
-  addToPokedex() {
-    this.pokedexService.add(this.pokemon);
-  }
-  deleteFromPokedex() {
-    this.pokedexService.remove(this.pokemon);
   }
 }

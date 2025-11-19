@@ -6,10 +6,11 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Pokemon } from '../../utils/types/pokemon.type';
+import { PokemonCardComponent } from '../../components/pokemon-card/pokemon-card.component';
 
 @Component({
   selector: 'app-pokemon',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, PokemonCardComponent],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css',
 })
