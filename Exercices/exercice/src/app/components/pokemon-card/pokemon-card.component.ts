@@ -21,6 +21,7 @@ type PokemonType =
 })
 export class PokemonCardComponent {
   @Input() pokemon: any; // Assuming 'pokemon' is passed as an input
+  @Output() delete = new EventEmitter<void>()
 
   // Function to return a class based on the type
   getTypeColor(type: string): string {

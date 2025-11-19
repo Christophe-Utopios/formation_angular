@@ -64,4 +64,8 @@ export class PokemonComponent {
     console.log(this.pokemons);
     this.pokeForm.reset();
   }
+
+  deletePokemon(index: number) {
+    this.pokemons.splice(index, 1)
+  }
 }

@@ -80,3 +80,18 @@ Dans le formulaire réactives, on peut retrouver 3 classes principales pour repr
 - FormControl pour les données simple (boolean, string, number)
 - FormGroup pour les objets
 - FormArray pour les tableaux
+
+## Cycle de vie
+
+- OnChange
+    - Se lance quand l'@Input change. Ne se lance pas si pas d'inputs
+    - Pour réagir aux modifications d'un input
+    - On reçoit la valeur précédente, la nouvelle valeur, et si c'est le premier changement
+
+- OnInit :
+    - Pour agir quand le composant est prêt => Faire des requêtes HTTP
+    - Récupérer des données
+
+- OnDestroy :
+    - Se lance quand on quitte le composant
+    - Pour couper les streams, souscriptions ect..

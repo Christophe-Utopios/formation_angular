@@ -68,3 +68,13 @@ Créer un bouton dans le pokemon-card permettant de supprimer un pokemon
 
 - Le bouton doit envoyer un événement au parent
 - Le parent doit récupérer cet événement pour supprimer le pokemon de la liste
+
+## Exercice 9
+
+Créer un pokedexService
+
+- Contient un tableau de pokemons
+- Deux méthodes pour ajouter et supprimer du tableau
+
+- Dans pokemonCard Ajouter un bouton pour ajouter au podedex
+- Dans un composant Pokedex afficher la liste des pokemons
