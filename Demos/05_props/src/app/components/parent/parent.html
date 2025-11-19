@@ -1,4 +1,6 @@
 <h1>Props</h1>
 
-<app-enfant [message]="parentMessage" [var2]="'test'" />
+<app-enfant [message]="parentMessage" [var2]="'test'" (dataEmitted)="handleData($event)" />
 <app-enfant [message]="'je viens aussi du parent'"  />
+
+<p>{{ receiveData }}</p>

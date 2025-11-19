@@ -9,4 +9,9 @@ import { Enfant } from '../enfant/enfant';
 })
 export class Parent {
   parentMessage : string = "Hello depuis le composant parent!"
+  receiveData : string = ""
+
+  handleData(data : string){
+    this.receiveData = data
+  }
 }
